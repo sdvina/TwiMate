@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TwiMate</string>
+
+    <string name="cd_share">Share</string>
+    <string name="cd_more_vert">More Actions</string>
+
+    <string name="home">Home</string>
+    <string name="download">Download</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+
+    <string name="task_status_type_suspend">Suspend</string>
+    <string name="task_status_type_in_progress">In Progress</string>
+    <string name="task_status_type_failure">Failure</string>
+    <string name="task_status_type_complete">Complete</string>
 </resources>
