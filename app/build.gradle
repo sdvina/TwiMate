@@ -69,9 +69,9 @@ dependencies {
     implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
 
-    def room_version = "2.5.0-rc01"
-    def paging_version = "3.2.0-alpha03"
-    def paging_compose_version = "1.0.0-alpha17"
+    def room_version = "2.5.0"
+    def paging_version = "3.2.0-alpha04"
+    def paging_compose_version = "1.0.0-alpha18"
     // ROOM
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
@@ -85,6 +85,10 @@ dependencies {
 
     // load image
     implementation "io.coil-kt:coil-compose:2.2.2"
+
+    // http request
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'org.jsoup:jsoup:1.14.3'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

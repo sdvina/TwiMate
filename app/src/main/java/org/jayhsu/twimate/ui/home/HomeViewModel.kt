@@ -6,9 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import org.jayhsu.twimate.data.enums.TaskStatus
 import org.jayhsu.twimate.data.local.entity.TaskWithFiles
 import org.jayhsu.twimate.repository.AppContainer
