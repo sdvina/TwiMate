@@ -24,7 +24,6 @@ class HomeViewModel(
     private var _state = MutableStateFlow(HomeViewState())
     val state: MutableStateFlow<HomeViewState>
         get() = _state
-
     fun getTaskWithFileFlow(vararg status: TaskStatus): Flow<PagingData<TaskWithFiles>> {
         return Pager(pagingConfig) {
             muRepository.taskWithFilesPagingSource()
@@ -34,6 +33,7 @@ class HomeViewModel(
             }
         }.cachedIn(viewModelScope)
     }
+
 
     companion object {
         fun provideFactory(
