@@ -1,4 +1,4 @@
-package org.jayhsu.twimate.ui.home
+package org.jayhsu.twimate.ui.download
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,20 +22,21 @@ import org.jayhsu.twimate.ui.AppBottomBar
 import org.jayhsu.twimate.ui.AppBottomNavType
 import org.jayhsu.twimate.ui.AppNavigation
 import org.jayhsu.twimate.ui.components.MoreActionsButton
+import org.jayhsu.twimate.ui.home.TaskItemCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(
+fun DownloadScreen(
     modifier: Modifier = Modifier,
     appBottomNavState: MutableState<AppBottomNavType>,
     appNavigation: AppNavigation,
-    viewModel: HomeViewModel
+    viewModel: DownloadViewModel
 ) {
     val listState = rememberLazyListState()
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(R.string.app_name))},
+                title = { Text(text = stringResource(R.string.download))},
                 modifier = modifier,
                 navigationIcon = { Icon(painter = painterResource(R.drawable.ic_launcher_foreground), contentDescription = null)},
                 actions = {

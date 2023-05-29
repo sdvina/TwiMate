@@ -5,12 +5,16 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.jayhsu.twimate.repository.AppContainer
+import org.jayhsu.twimate.ui.download.DownloadScreen
+import org.jayhsu.twimate.ui.download.DownloadViewModel
 import org.jayhsu.twimate.ui.home.HomeScreen
 import org.jayhsu.twimate.ui.home.HomeViewModel
 import org.jayhsu.twimate.ui.settings.SettingsScreen
@@ -29,6 +33,7 @@ fun AppNavGraph (
     appNavigation: AppNavigation,
     appContainer: AppContainer
 ) {
+    val appBottomNavState = remember { mutableStateOf(AppBottomNavType.HOME) }
     AnimatedNavHost(
         navController = navController,
         startDestination = AppDestinations.HOME,
@@ -51,8 +56,19 @@ fun AppNavGraph (
                 factory = HomeViewModel.provideFactory(appContainer)
             )
             HomeScreen(
+                appBottomNavState = appBottomNavState,
                 appNavigation = appNavigation,
                 viewModel = homeViewModel
+            )
+        }
+        composable(AppDestinations.DOWNLOAD) {
+            val downloadViewModel: DownloadViewModel = viewModel(
+                factory = DownloadViewModel.provideFactory(appContainer)
+            )
+            DownloadScreen(
+                appBottomNavState = appBottomNavState,
+                appNavigation = appNavigation,
+                viewModel = downloadViewModel
             )
         }
         composable(AppDestinations.SETTINGS){
