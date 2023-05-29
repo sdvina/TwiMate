@@ -13,6 +13,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.jayhsu.twimate.repository.AppContainer
+import org.jayhsu.twimate.ui.about.AboutScreen
 import org.jayhsu.twimate.ui.download.DownloadScreen
 import org.jayhsu.twimate.ui.download.DownloadViewModel
 import org.jayhsu.twimate.ui.home.HomeScreen
@@ -77,6 +78,9 @@ fun AppNavGraph (
             )
         }
         composable(AppDestinations.ABOUT){
+            AboutScreen(
+                appNavigation = appNavigation
+            )
         }
     }
 }

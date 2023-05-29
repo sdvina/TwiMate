@@ -1,4 +1,4 @@
-package org.jayhsu.twimate.ui.settings
+package org.jayhsu.twimate.ui.about
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -13,7 +13,7 @@ import org.jayhsu.twimate.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen(
+fun AboutScreen(
     modifier: Modifier = Modifier,
     appNavigation: AppNavigation
 ) {
@@ -21,7 +21,7 @@ fun SettingsScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = stringResource(id = R.string.settings))
+                    Text(text = stringResource(id = R.string.about))
                 },
                 navigationIcon = {
                     IconButton(onClick = { appNavigation.navigationToBack() }) {
@@ -34,7 +34,7 @@ fun SettingsScreen(
         Column(
             modifier = modifier.padding(innerPadding)
         ) {
-            Text(text = "Settings")
+            Text(text = "About")
         }
     }
 }

@@ -42,13 +42,13 @@ fun HomeScreen(
                     MoreActionsButton {
                         DropdownMenuItem(
                             text = { Text(text = stringResource(R.string.settings)) },
-                            onClick = { /*TODO*/ },
+                            onClick = { appNavigation.navigateToSettings() },
                             leadingIcon = { Icon(imageVector = Icons.Filled.Settings, contentDescription = null) }
                         )
                         Divider()
                         DropdownMenuItem(
                             text = { Text(text = stringResource(R.string.about))},
-                            onClick = { /*TODO*/ },
+                            onClick = { appNavigation.navigateToAbout() },
                             leadingIcon = { Icon(imageVector = Icons.Filled.Info, contentDescription = null) }
                         )
                     }
