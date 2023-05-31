@@ -39,6 +39,27 @@ class FakeRepository {
         status = TaskStatus.SUSPEND,
         createDate = Date.valueOf("2023-05-12")
     )
+    private val file2 = File(
+        fileId = 0,
+        taskId = 0,
+        uri = Uri.parse(""),
+        type = FileType.VIDEO,
+        status = TaskStatus.SUSPEND,
+        createDate = Date.valueOf("2023-05-12")
+    )
+    private val file3 = File(
+        fileId = 0,
+        taskId = 0,
+        uri = Uri.parse(""),
+        type = FileType.VIDEO,
+        status = TaskStatus.SUSPEND,
+        createDate = Date.valueOf("2023-05-12")
+    )
+
+    val taskWithFiles1 = TaskWithFiles(
+        task = task1,
+        files = listOf(file1, file2, file3)
+    )
 
     fun addTasks(vararg task: Task) {
 
@@ -53,10 +74,6 @@ class FakeRepository {
         return null
     }
     fun getTaskWithFilesFlow(): Flow<List<TaskWithFiles>>? {
-        val taskWithFiles1 = TaskWithFiles(
-            task = task1,
-            files = listOf(file1)
-        )
         return flow {
             emit(listOf(taskWithFiles1))
         }

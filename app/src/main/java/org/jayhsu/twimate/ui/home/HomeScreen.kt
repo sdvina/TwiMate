@@ -4,9 +4,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -21,7 +18,7 @@ import org.jayhsu.twimate.data.local.entity.TaskWithFiles
 import org.jayhsu.twimate.ui.AppBottomBar
 import org.jayhsu.twimate.ui.AppBottomNavType
 import org.jayhsu.twimate.ui.AppNavigation
-import org.jayhsu.twimate.ui.components.MoreActionsButton
+import org.jayhsu.twimate.ui.components.MoreAction
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,21 +35,7 @@ fun HomeScreen(
                 title = { Text(text = stringResource(R.string.app_name))},
                 modifier = modifier,
                 navigationIcon = { Icon(painter = painterResource(R.drawable.ic_launcher_foreground), contentDescription = null)},
-                actions = {
-                    MoreActionsButton {
-                        DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.settings)) },
-                            onClick = { appNavigation.navigateToSettings() },
-                            leadingIcon = { Icon(imageVector = Icons.Filled.Settings, contentDescription = null) }
-                        )
-                        Divider()
-                        DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.about))},
-                            onClick = { appNavigation.navigateToAbout() },
-                            leadingIcon = { Icon(imageVector = Icons.Filled.Info, contentDescription = null) }
-                        )
-                    }
-                }
+                actions = { MoreAction(appNavigation = appNavigation) }
             )
         },
         bottomBar = {
